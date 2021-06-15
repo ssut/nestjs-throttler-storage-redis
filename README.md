@@ -8,11 +8,11 @@ Redis storage provider for the [@nestjs/throttler](https://github.com/nestjs/thr
 
 ### Yarn
 
-- `yarn add nestjs-throttler-storage-redis ioredis`
+- `yarn add @ssut/nestjs-throttler-storage-redis ioredis`
 
 ### NPM
 
-- `npm install --save nestjs-throttler-storage-redis ioredis`
+- `npm install --save @ssut/nestjs-throttler-storage-redis ioredis`
 
 # Usage
 
