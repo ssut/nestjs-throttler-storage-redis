@@ -1,3 +1,19 @@
+# [0.2.0](https://github.com/ssut/nestjs-throttler-storage-redis/compare/v0.1.13...v0.2.0) (2021-06-15)
+
+
+### Bug Fixes
+
+* add support for redis.options.keyPrefix ([29b009f](https://github.com/ssut/nestjs-throttler-storage-redis/commit/29b009f77cf824d98171de355145350e99d2e113))
+* remove protected keywords ([6ce0e81](https://github.com/ssut/nestjs-throttler-storage-redis/commit/6ce0e8140e1eb7c0a6524a23207055e5696fc9d4))
+
+
+### Features
+
+* add support for redis cluster ([f8c11fe](https://github.com/ssut/nestjs-throttler-storage-redis/commit/f8c11fe7774eb060ac3b8967bc29e87b27a45a1c))
+* allow to change COUNT value in redis scan method ([#392](https://github.com/ssut/nestjs-throttler-storage-redis/issues/392)) ([426ec22](https://github.com/ssut/nestjs-throttler-storage-redis/commit/426ec22272b6bfe722638342cbacb3313698a5ce))
+
+
+
 ## [0.1.13](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.12...v0.1.13) (2021-03-26)
 
 ## [0.1.12](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.11...v0.1.12) (2021-03-26)
