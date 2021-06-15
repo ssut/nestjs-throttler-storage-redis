@@ -2,40 +2,52 @@ import { Injectable } from '@nestjs/common';
 import * as Redis from 'ioredis';
 import { ThrottlerStorageRedis } from './throttler-storage-redis.interface';
 
+type RedisClient = Redis.Redis | Redis.Cluster;
+
 @Injectable()
 export class ThrottlerStorageRedisService implements ThrottlerStorageRedis {
-  redis: Redis.Redis;
-  scanCount: number;
+  public redis: RedisClient;
+  public scanCount: number;
 
-  constructor(redis?: Redis.Redis, scanCount?: number);
-  constructor(options?: Redis.RedisOptions, scanCount?: number);
-  constructor(url?: string, scanCount?: number);
-  constructor(redisOrOptions?: Redis.Redis | Redis.RedisOptions | string, scanCount?: number) {
-    this.scanCount = typeof scanCount === 'undefined' ? 1000 : scanCount;
+  public constructor(redis?: RedisClient, scanCount?: number);
+  public constructor(options?: Redis.RedisOptions, scanCount?: number);
+  public constructor(url?: string, scanCount?: number);
+  public constructor(redisOrOptions?: RedisClient | Redis.RedisOptions | string, scanCount?: number) {
+    this.scanCount = scanCount ?? 1000;
 
-    if (redisOrOptions instanceof Redis) {
+    if (redisOrOptions instanceof Redis || redisOrOptions instanceof Redis.Cluster) {
       this.redis = redisOrOptions;
     } else if (typeof redisOrOptions === 'string') {
-      this.redis = new Redis(redisOrOptions as string);
+      this.redis = new Redis(redisOrOptions);
     } else {
       this.redis = new Redis(redisOrOptions);
     }
   }
 
-  async getRecord(key: string): Promise<number[]> {
+  private get keyPrefix() {
+    if (this.redis instanceof Redis.Cluster) {
+      return this.redis.options.redisOptions?.keyPrefix ?? '';
+    } else if (this.redis instanceof Redis) {
+      return this.redis.options.keyPrefix ?? '';
+    }
+
+    return '';
+  }
+
+  public async getRecord(key: string): Promise<number[]> {
     const ttls = (
       await this.redis.scan(
         0,
         'MATCH',
-        `${this.redis.options.keyPrefix}${key}:*`,
+        `${this.keyPrefix}${key}:*`,
         'COUNT',
         this.scanCount,
       )
     ).pop();
-    return (ttls as string[]).map((k) => parseInt(k.split(':').pop())).sort();
+    return (ttls as string[]).map((k) => Number(k.split(':').pop())).sort();
   }
 
-  async addRecord(key: string, ttl: number): Promise<void> {
+  public async addRecord(key: string, ttl: number): Promise<void> {
     await this.redis.set(`${key}:${Date.now() + ttl * 1000}`, ttl, 'EX', ttl);
   }
 }

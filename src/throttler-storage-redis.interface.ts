@@ -4,7 +4,7 @@ export interface ThrottlerStorageRedis {
   /**
    * The redis instance.
    */
-  redis: Redis.Redis;
+  redis: Redis.Redis | Redis.Cluster;
 
   /**
    * The amount of items that redis should return for each scan.
