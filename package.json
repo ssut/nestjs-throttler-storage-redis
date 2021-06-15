@@ -1,8 +1,8 @@
 {
-  "name": "nestjs-throttler-storage-redis",
+  "name": "@ssut/nestjs-throttler-storage-redis",
   "version": "0.1.13",
   "description": "Redis storage provider for the @nestjs/throttler package",
-  "author": "Kim 金可明 <koomen@pm.me>",
+  "author": "Suhun Han <ssut@ssut.me>",
   "keywords": [
     "nestjs",
     "rate-limit",
@@ -124,10 +124,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kkoomen/nestjs-throttler-storage-redis.git"
+    "url": "git+https://github.com/ssut/nestjs-throttler-storage-redis.git"
   },
   "bugs": {
-    "url": "https://github.com/kkoomen/nestjs-throttler-storage-redis/issues"
+    "url": "https://github.com/ssut/nestjs-throttler-storage-redis/issues"
   },
-  "homepage": "https://github.com/kkoomen/nestjs-throttler-storage-redis#readme"
+  "homepage": "https://github.com/ssut/nestjs-throttler-storage-redis#readme"
 }
