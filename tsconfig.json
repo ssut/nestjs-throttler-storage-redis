@@ -2,6 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "lib": ["ESNext"],
+    "moduleResolution": "node",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -12,6 +13,7 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
+    "types": ["reflect-metadata", "jest", "@types/jest"],
     "incremental": true
   },
   "exclude": ["node_modules", "dist"]

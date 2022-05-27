@@ -42,3 +42,11 @@ lerna-debug.log*
 *.zip
 *.tar.gz
 /package/
+
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
