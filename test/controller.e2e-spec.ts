@@ -28,7 +28,7 @@ describe.each`
     }).compile();
 
     app = moduleFixture.createNestApplication(adapter);
-    await app.listen(0);
+    await app.listen(0, '127.0.0.1');
   });
 
   afterAll(async () => {
@@ -42,6 +42,7 @@ describe.each`
     let appUrl: string;
     beforeAll(async () => {
       appUrl = await app.getUrl();
+      console.info(appUrl);
     });
 
     /**
