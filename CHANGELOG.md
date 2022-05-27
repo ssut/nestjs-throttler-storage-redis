@@ -1,3 +1,16 @@
+## 1.0.0 (2022-05-27)
+
+* chore: npm version w/ yarn pnp deps ([686d7ee](https://github.com/ssut/nestjs-throttler-storage-redis/commit/686d7ee))
+* chore: upgrade deps (support nestjs v8) ([7321f05](https://github.com/ssut/nestjs-throttler-storage-redis/commit/7321f05))
+* chore(ci): drop support for node v10, v12 ([518d739](https://github.com/ssut/nestjs-throttler-storage-redis/commit/518d739))
+* chore(ci): yarn install immutable ([1a08a0d](https://github.com/ssut/nestjs-throttler-storage-redis/commit/1a08a0d))
+* chore(deps): upgrade typescript-eslint deps ([3480b78](https://github.com/ssut/nestjs-throttler-storage-redis/commit/3480b78))
+* chore(readme): update package name ([9abcd3e](https://github.com/ssut/nestjs-throttler-storage-redis/commit/9abcd3e))
+* chore!: yarn pnp ([528b1c2](https://github.com/ssut/nestjs-throttler-storage-redis/commit/528b1c2))
+* fix!: apply ioredis v5 breaking changes ([c0f8079](https://github.com/ssut/nestjs-throttler-storage-redis/commit/c0f8079))
+
+
+
 # [0.2.0](https://github.com/ssut/nestjs-throttler-storage-redis/compare/v0.1.13...v0.2.0) (2021-06-15)
 
 
