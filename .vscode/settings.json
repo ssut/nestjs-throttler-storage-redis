@@ -1,5 +1,4 @@
 {
-  "cSpell.words": [
-    "ratelimit"
-  ]
+  "cSpell.words": ["ratelimit"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
